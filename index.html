@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alok | Portfolio</title>
+    <link rel="icon" href="images/display-code.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body>
+    <!--Navbar-->
+    <nav class="navbar">
+      <a href="#" id="logo">
+        <span class="logo-symbol">&lt;</span>Alok<span class="logo-symbol"
+          >/&gt;</span
+        >
+      </a>
+      <div class="hamburger" onclick="toggleNavbar()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contacts">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Home page section-->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="hero-main">
+          <div class="hero-text">
+            <span class="eyebrow">Full Stack Developer</span>
+            <h1 class="hero-title">Alok Kumar Panda</h1>
+            <p class="hero-description">
+              Together, let's create something extraordinary.
+              <span class="typewriter-container">
+                <span class="typewriter-text"
+                  >Your idea's, my code endless possibilities.</span
+                >
+                <span class="blinking-cursor">|</span>
+              </span>
+            </p>
+
+            <div class="cta-wrapper">
+              <a
+                href="https://drive.google.com/file/d/1XaprnqdmmN8n9y-fyGoI3Keq-gAjHeul/view?usp=sharing"
+                target="_blank"
+                class="cta-button primary-cta"
+              >
+                <i class="fas fa-download"></i>
+                Download CV
+              </a>
+              <a href="#contacts" class="cta-button secondary-cta">
+                <i class="fas fa-envelope"></i>
+                Contact Me
+              </a>
+            </div>
+
+            <div class="social-links">
+              <a
+                href="https://github.com/AlokKumar-04"
+                target="_blank"
+                class="social-card"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/alok-kumar-panda-864b421a4/"
+                target="_blank"
+                class="social-card"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#contacts" class="social-card">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About section-->
+    <section class="about" id="about">
+      <div class="container">
+        <h2 class="section-heading" data-aos="fade-up">
+          About <span class="highlight">Me</span>
+        </h2>
+
+        <div class="about-content">
+          <!-- Profile Section -->
+          <div class="profile-card" data-aos="fade-right">
+            <div class="profile-image">
+              <img src="assets/hero.jpg" alt="Alok Kumar Panda" />
+              <div class="image-border"></div>
+            </div>
+            <div class="profile-info">
+              <h3>Python Full-Stack Developer</h3>
+              <p class="location">
+                <i class="fas fa-map-marker-alt"></i>
+                Bhubaneswar, India
+              </p>
+              <div class="availability">
+                <div class="status-dot"></div>
+                <span>Available for new projects</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bio Section -->
+          <div class="bio" data-aos="fade-left">
+            <h3 class="bio-title">Code With Curiosity</h3>
+            <div class="bio-text">
+              <p style="text-align: justify">
+                <span
+                  class="highlight"
+                  style="font-weight: bold; color: #6b7bff"
+                  >Driven Python Full Stack Developer</span
+                >
+                crafting end-to-end digital experiences by merging expertise in
+                frontend artistry, backend logic, and database architecture. I
+                orchestrate dynamic, responsive web applications that balance
+                sleek user interfaces with bulletproof functionality. From
+                pixel-perfect designs powered by modern frameworks to scalable
+                server-side solutions, I breathe life into ideas while
+                championing clean, elegant code. A relentless problem-solver and
+                lifelong learner, I thrive in collaborative spaces where
+                curiosity fuels innovation. Whether tackling complex challenges
+                or refining seamless workflows, I'm driven to create meaningful
+                digital impact.
+              </p>
+              <br />
+              <p>
+                <span style="font-weight: bold; color: #6b7bff"
+                  >Ready to collaborate</span
+                >
+                with teams or clients and open to freelance opportunities—let's
+                transform visions into functional, future-ready solutions.
+              </p>
+
+              <br />
+              <br />
+              <ul class="expertise-list">
+                <li>
+                  <i class="fas fa-code"></i>
+                  Full-stack development with Python/Django
+                </li>
+                <li>
+                  <i class="fas fa-database"></i>
+                  Database architecture & optimization
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technical Proficiencies -->
+        <div class="technical-section" data-aos="zoom-in">
+          <div class="tech-grid">
+            <div class="tech-card">
+              <div class="tech-icon">
+                <i class="fab fa-python" style="color: #6b7bff"></i>
+              </div>
+              <h4>Python Development</h4>
+              <p>Advanced algorithms and data analysis</p>
+            </div>
+
+            <div class="tech-card">
+              <div class="tech-icon">
+                <i class="fas fa-server" style="color: #6b7bff"></i>
+              </div>
+              <h4>Backend Architecture</h4>
+              <p>Scalable Django/Flask applications with PostgreSQL/MySQL</p>
+            </div>
+
+            <div class="tech-card">
+              <div class="tech-icon">
+                <i class="fas fa-laptop-code" style="color: #6b7bff"></i>
+              </div>
+              <h4>Frontend Integration</h4>
+              <p>Modern UI implementation with JavaScript & Bootstrap</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+      <h2 class="section-heading">
+        Crafted <span class="highlight">with Code</span>
+      </h2>
+      <p class="section-subtitle">Where creativity meets functionality.</p>
+
+      <div class="projects-container">
+        <!-- Featured Real Project -->
+        <div class="project-card featured">
+          <div class="featured-badge">Featured Project</div>
+          <div class="project-image">
+            <img src="assets/first.png" alt="Project Demo" />
+            <div class="project-links">
+              <a
+                href="https://todolist-8db8.onrender.com"
+                target="_blank"
+                class="demo-link"
+                >Live Demo</a
+              >
+              <a
+                href="https://github.com/AlokKumar-04/ToDo-Web-Application"
+                class="github-link"
+                target="_blank"
+                >GitHub</a
+              >
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">To-Do List Web Application</h3>
+            <div class="project-tags">
+              <span>Bootstrap</span>
+              <span>Django</span>
+            </div>
+            <p class="project-description">
+              This to-do list web application helps users manage tasks
+              efficiently by allowing task creation, setting due dates for
+              better prioritization, and easy deletion. It addresses the need
+              for organized daily task management to enhance productivity. I
+              focused on building a responsive design with an intuitive user
+              interface and implemented seamless CRUD operations. Notable
+              achievements include effective due-date management and a clean,
+              user-friendly layout, demonstrating my expertise in Django and
+              frontend development.
+            </p>
+          </div>
+        </div>
+
+        <!-- Portfolio as a Project -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="assets/scrnsht1.png" alt="Portfolio Project" />
+            <div class="project-links">
+              <a href="portfolio-github-link" class="github-link"
+                >View Source</a
+              >
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">This Portfolio Website</h3>
+            <div class="project-tags">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
+              <span>Responsive Design</span>
+            </div>
+            <p class="project-description">
+              Modern portfolio built from scratch with custom animations,
+              responsive layouts, and performance optimizations. Features
+              semantic HTML and CSS Grid/Flexbox layouts.
+            </p>
+          </div>
+        </div>
+
+        <!-- Coming Soon Placeholder -->
+        <div class="project-card placeholder">
+          <div class="placeholder-content">
+            <svg
+              class="construction-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="var(--primary-accent)"
+                d="M21.03 3L18 20.29L15.28 22.7L12 17.59L8.72 22.7L6 20.29L2.97 3H21.03M15.57 15.52L12 12.33L8.43 15.52L9.76 17.53L12 15.19L14.24 17.53L15.57 15.52M11.29 9.35L12 10.17L12.71 9.35L14.76 8.3L13.43 10.5H15.5L13.42 12.59L12 11.5L10.58 12.59L8.5 10.5H10.57L9.24 8.3L11.29 9.35Z"
+              />
+            </svg>
+            <h3 class="coming-soon">Exciting Project Coming Soon!</h3>
+            <p class="currently-building">
+              Currently developing a Django web application for a blog platform
+              where users can post and comment on blogs. Follow my GitHub for
+              real-time updates!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bonus Counter -->
+      <div class="project-counter">
+        <span class="completed">1</span> completed project •
+        <span class="in-progress">2</span> in development
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section" id="skills">
+      <div class="container">
+        <h2 class="section-title">
+          Skills <span class="highlight"> & Tools</span>
+        </h2>
+        <p class="section-subtitle">
+          Continuous learner with expertise in multiple technologies
+        </p>
+
+        <div class="skills-grid">
+          <!-- Programming Languages -->
+          <div class="skill-category">
+            <h3>Programming Languages</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <img src="assets/python.svg" alt="Python" class="skill-icon" />
+                <span>Python</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/javascript.svg"
+                  alt="JavaScript"
+                  class="skill-icon"
+                />
+                <span>JavaScript (ES6+)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Frontend Development -->
+          <div class="skill-category">
+            <h3>Frontend Development</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <img src="assets/html-5.svg" alt="HTML5" class="skill-icon" />
+                <span>HTML5</span>
+              </div>
+              <div class="skill-item">
+                <img src="assets/css-3.svg" alt="CSS3" class="skill-icon" />
+                <span>CSS3</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/bootstrap.svg"
+                  alt="Bootstrap"
+                  class="skill-icon"
+                />
+                <span>Bootstrap</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend & Databases -->
+          <div class="skill-category">
+            <h3>Backend & Databases</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <img src="assets/django.svg" alt="Django" class="skill-icon" />
+                <span>Django</span>
+              </div>
+              <div class="skill-item">
+                <img src="assets/flask.svg" alt="Flask" class="skill-icon" />
+                <span>Flask</span>
+              </div>
+              <div class="skill-item">
+                <img src="assets/mysql.svg" alt="MySQL" class="skill-icon" />
+                <span>MySQL</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools & Platforms -->
+          <div class="skill-category">
+            <h3>Tools & Platforms</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <i class="fab fa-git-alt skill-icon"></i>
+                <span>Git</span>
+              </div>
+              <div class="skill-item">
+                <img
+                  src="assets/vs-code.svg"
+                  alt="VS Code"
+                  class="skill-icon"
+                />
+                <span>VS Code</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contacts">
+      <div class="contact-container">
+        <h2 class="section-heading">
+          Let's <span class="highlight">Connect</span>
+        </h2>
+
+        <div class="contact-wrapper">
+          <!-- Contact Information -->
+          <div class="contact-info" data-aos="fade-right">
+            <h3 class="info-title">Reach Out</h3>
+            <div class="info-items">
+              <a href="mailto:alokkumarpanda72@gmail.com" class="info-card">
+                <div class="info-icon email">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="info-content">
+                  <h4>Email Me</h4>
+                  <p>alokkumarpanda72@gmail.com</p>
+                </div>
+              </a>
+
+              <a
+                href="https://github.com/AlokKumar-04"
+                target="_blank"
+                class="info-card"
+              >
+                <div class="info-icon github">
+                  <i class="fab fa-github"></i>
+                </div>
+                <div class="info-content">
+                  <h4>GitHub Profile</h4>
+                  <p>@AlokKumar-04</p>
+                </div>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/alok-kumar-panda-864b421a4"
+                target="_blank"
+                class="info-card"
+              >
+                <div class="info-icon linkedin">
+                  <i class="fab fa-linkedin-in"></i>
+                </div>
+                <div class="info-content">
+                  <h4>LinkedIn</h4>
+                  <p>Alok Kumar Panda</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form" data-aos="fade-left">
+            <h3 class="form-title">Send a Message</h3>
+            <form id="contactForm">
+              <div class="form-group">
+                <input type="text" name="name" required />
+                <label>Your Name</label>
+              </div>
+              <div class="form-group">
+                <input type="email" name="email" required />
+                <label>Your Email</label>
+              </div>
+              <div class="form-group">
+                <textarea name="message" rows="5" required></textarea>
+                <label>Your Message</label>
+              </div>
+              <button type="submit" class="submit-btn">
+                <span>Send Message</span>
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-social">
+          <a
+            href="https://github.com/AlokKumar-04"
+            target="_blank"
+            class="footer-link"
+          >
+            <div class="social-icon">
+              <i class="fab fa-github"></i>
+            </div>
+            <span>GitHub</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/alok-kumar-panda-864b421a4"
+            target="_blank"
+            class="footer-link"
+          >
+            <div class="social-icon">
+              <i class="fab fa-linkedin-in"></i>
+            </div>
+            <span>LinkedIn</span>
+          </a>
+          <a href="mailto:alokkumarpanda72@gmail.com" class="footer-link">
+            <div class="social-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <span>Email</span>
+          </a>
+        </div>
+        <div class="footer-divider"></div>
+        <p class="footer-copyright">
+          © 2025 Alok Kumar Panda. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!--JavaScript-->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

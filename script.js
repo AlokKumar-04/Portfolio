@@ -15,8 +15,8 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
 
   emailjs
     .send("service_aalogh4", "template_tfwbzqu", {
-      name: name,
-      email: email,
+      from_name: name,
+      from_email: email,
       message: message,
     })
     .then(

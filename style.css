@@ -39,6 +39,8 @@ html {
 body {
   width: 90%;
   margin-inline: auto;
+  padding-top: 80px;
+  /* Add space for fixed navbar */
 }
 
 .navbar {
@@ -46,7 +48,8 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  background-color: transparent;
+  background-color: rgba(0, 0, 16, 0.95);
+  backdrop-filter: blur(10px);
   position: fixed;
   top: 0;
   left: 0;
@@ -58,7 +61,7 @@ body {
 #logo {
   color: #6b7bff;
   text-decoration: none;
-  font-size: 2.5rem; /* Main text size */
+  font-size: 2.5rem;
   font-weight: 1000;
   font-family: "Courier New", Courier, monospace;
   letter-spacing: 0.05em;
@@ -67,16 +70,16 @@ body {
 }
 
 .logo-symbol {
-  font-size: 1.5rem; /* Smaller than main text */
-  font-weight: 900; /* Extra bold for symbols */
-  margin: 0 2px; /* Add slight spacing */
-  line-height: 1; /* Align vertically with text */
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin: 0 2px;
+  line-height: 1;
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
-  gap: 30px; /* Increased spacing between menu items */
+  gap: 30px;
   margin: 0;
   padding: 0;
 }
@@ -84,13 +87,14 @@ body {
 .navbar ul li a {
   text-decoration: none;
   color: whitesmoke;
-  font-size: 1.2rem; /* Increased font size */
-  font-weight: 600; /* Increased font weight */
+  font-size: 1.2rem;
+  font-weight: 600;
   transition: box-shadow 0.3s ease;
+  padding: 5px 0;
 }
 
 .navbar ul li a:hover {
-  box-shadow: inset 0 -5px 0 0 #6b7bff; /* 5px solid underline */ /* Ensure the underline is solid */
+  box-shadow: inset 0 -5px 0 0 #6b7bff;
 }
 
 /* Hamburger Menu Styling */
@@ -98,14 +102,35 @@ body {
   display: none;
   flex-direction: column;
   cursor: pointer;
-  gap: 6px; /* Slightly increased gap between lines */
+  gap: 6px;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.hamburger:hover {
+  background-color: rgba(107, 123, 255, 0.1);
 }
 
 .hamburger .line {
-  width: 30px; /* Increased width of hamburger lines */
+  width: 30px;
   height: 3px;
   background-color: whitesmoke;
   border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger animation when active */
+.navbar.show .hamburger .line:nth-child(1) {
+  transform: rotate(45deg) translate(9px, 9px);
+}
+
+.navbar.show .hamburger .line:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar.show .hamburger .line:nth-child(3) {
+  transform: rotate(-45deg) translate(9px, -9px);
 }
 
 /* Responsive Design */
@@ -115,26 +140,60 @@ body {
   }
 
   .navbar ul {
-    display: none; /* Hide the menu by default */
+    display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px;
-    left: auto;
-    right: 40px; /* Align with the increased padding */
-    background-color: #000020;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 32, 0.95);
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    animation: slideDown 0.3s ease;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .navbar ul li {
     text-align: center;
-    margin: 12px 0; /* Adjust spacing between menu items */
-    width: auto; /* Adjust width to content */
+    margin: 12px 0;
+    width: 100%;
+  }
+
+  .navbar ul li a {
+    display: block;
+    padding: 12px 20px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+
+  .navbar ul li a:hover {
+    background-color: rgba(107, 123, 255, 0.1);
+    box-shadow: none;
   }
 
   .navbar.show ul {
-    display: flex; /* Show menu when toggled */
+    display: flex;
+  }
+
+  #logo {
+    font-size: 2rem;
+  }
+
+  .navbar {
+    padding: 15px 20px;
   }
 }
 
@@ -154,28 +213,30 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    45deg,
-    #6b7bff,
-    #4f5cf0,
-    #72757e,
-    #16161a,
-    #6b7bff
-  );
+  background: linear-gradient(45deg,
+      #6b7bff,
+      #4f5cf0,
+      #72757e,
+      #16161a,
+      #6b7bff);
   background-size: 400% 400%;
   animation: gradient-flow 20s ease infinite;
   z-index: 1;
-  opacity: 0.3; /* Increased opacity */
-  filter: blur(80px); /* Reduced blur for bolder effect */
+  opacity: 0.3;
+  /* Increased opacity */
+  filter: blur(80px);
+  /* Reduced blur for bolder effect */
 }
 
 @keyframes gradient-flow {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -203,10 +264,12 @@ body {
     transform: translate(0, 0) scale(0.8);
     opacity: 0;
   }
+
   50% {
     transform: translate(50vw, -50vh) scale(1.2);
     opacity: 0.4;
   }
+
   100% {
     transform: translate(100vw, -100vh) scale(0.5);
     opacity: 0;
@@ -221,6 +284,7 @@ body {
   height: 8px;
   animation-duration: 20s;
 }
+
 .particle:nth-child(2) {
   top: 70%;
   left: 80%;
@@ -228,6 +292,7 @@ body {
   height: 12px;
   animation-duration: 25s;
 }
+
 .particle:nth-child(3) {
   top: 40%;
   left: 50%;
@@ -235,6 +300,7 @@ body {
   height: 6px;
   animation-duration: 22s;
 }
+
 .particle:nth-child(4) {
   top: 25%;
   left: 65%;
@@ -242,6 +308,7 @@ body {
   height: 10px;
   animation-duration: 28s;
 }
+
 .particle:nth-child(5) {
   top: 85%;
   left: 35%;
@@ -249,6 +316,7 @@ body {
   height: 7px;
   animation-duration: 24s;
 }
+
 .particle:nth-child(6) {
   top: 60%;
   left: 15%;
@@ -299,7 +367,8 @@ body {
 /* Button Spacing */
 .cta-wrapper {
   display: flex;
-  gap: 2rem; /* Increased spacing between buttons */
+  gap: 2rem;
+  /* Increased spacing between buttons */
 }
 
 /* Responsive Design */
@@ -318,6 +387,7 @@ body {
   .hero__title {
     font-size: 2.5rem;
   }
+
   .hero__description {
     font-size: 1.1rem;
   }
@@ -328,12 +398,14 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .hero::before,
   .particle,
   .bubble {
     /* Included bubble in reduced motion */
     animation: none !important;
-    display: none; /* Also hide bubbles when motion is reduced */
+    display: none;
+    /* Also hide bubbles when motion is reduced */
   }
 
   .hero::before {
@@ -462,6 +534,7 @@ body {
 
 /* Hover effect for both buttons */
 .cta-button:hover {
+
   .fa-download,
   .fa-envelope {
     animation: buttonIconBounce 0.6s ease;
@@ -469,10 +542,12 @@ body {
 }
 
 @keyframes buttonIconBounce {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-3px);
   }
@@ -573,9 +648,11 @@ body {
   0% {
     box-shadow: 0 0 0 0 rgba(107, 123, 255, 0.4);
   }
+
   70% {
     box-shadow: 0 0 0 10px rgba(107, 123, 255, 0);
   }
+
   100% {
     box-shadow: 0 0 0 0 rgba(107, 123, 255, 0);
   }
@@ -677,7 +754,6 @@ body {
 /* Project Grid */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   position: relative;
 }
@@ -821,6 +897,13 @@ body {
   box-shadow: 0 8px 32px rgba(107, 123, 255, 0.1);
 }
 
+/* Large screens: exactly 3 columns */
+@media (min-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 /* Mobile First Approach */
 @media (max-width: 768px) {
   .projects-section {
@@ -887,6 +970,20 @@ body {
   }
 }
 
+/* Medium screens: 2 columns */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small screens: 1 column */
+@media (max-width: 767px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Skills Section */
 .skills {
   background: rgb(22, 24, 42);
@@ -942,6 +1039,7 @@ body {
 .skill-front {
   border-radius: 10px 10px 0px 0px;
 }
+
 .skill-back {
   transform: rotateY(180deg);
   background: var(--glass-bg);
@@ -955,6 +1053,7 @@ body {
   transition: all 0.3s ease;
   text-shadow: 0 2px 4px rgba(107, 123, 255, 0.3);
 }
+
 .skill-icon i {
   color: var(--primary);
 }
@@ -1030,6 +1129,7 @@ body {
     stroke-dashoffset: 251;
     opacity: 0;
   }
+
   100% {
     stroke-dashoffset: calc(251 - (251 * var(--progress)) / 100);
     opacity: 1;
@@ -1074,6 +1174,7 @@ body {
       opacity: 0;
       transform: translateY(20px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
@@ -1090,10 +1191,12 @@ body {
 
 .contact-wrapper {
   display: grid;
-  grid-template-columns: minmax(300px, 1fr) 1.5fr; /* Improved responsive columns */
+  grid-template-columns: minmax(300px, 1fr) 1.5fr;
+  /* Improved responsive columns */
   gap: 2rem;
   width: 100%;
-  margin-top: 2rem; /* Added spacing after heading */
+  margin-top: 2rem;
+  /* Added spacing after heading */
 }
 
 .contact-info,
@@ -1132,18 +1235,17 @@ body {
   border: 1px solid transparent;
   backdrop-filter: blur(8px);
   text-decoration: none;
-  will-change: transform; /* Optimize animation performance */
+  will-change: transform;
+  /* Optimize animation performance */
 }
 
 .info-card:hover,
 .info-card:focus-visible {
   transform: translateX(8px);
   border-color: var(--primary);
-  background: linear-gradient(
-    to right,
-    rgba(107, 123, 255, 0.08) 20%,
-    transparent 100%
-  );
+  background: linear-gradient(to right,
+      rgba(107, 123, 255, 0.08) 20%,
+      transparent 100%);
   outline: none;
 }
 
@@ -1155,7 +1257,8 @@ body {
   place-items: center;
   font-size: 1.4rem;
   background: var(--primary);
-  color: #fff; /* Better contrast than var(--text) */
+  color: #fff;
+  /* Better contrast than var(--text) */
   flex-shrink: 0;
   transition: transform 0.2s ease;
 }
@@ -1253,13 +1356,15 @@ body {
 
 @media (max-width: 768px) {
   .contact-wrapper {
-    grid-template-columns: minmax(250px, 1fr); /* Better mobile handling */
+    grid-template-columns: minmax(250px, 1fr);
+    /* Better mobile handling */
     margin-top: 1.5rem;
   }
 
   .contact-info,
   .contact-form {
-    padding: 1.5rem; /* Reduced padding for mobile */
+    padding: 1.5rem;
+    /* Reduced padding for mobile */
   }
 }
 
@@ -1357,10 +1462,12 @@ body {
 }
 
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-5px);
   }

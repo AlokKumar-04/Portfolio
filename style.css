@@ -37,10 +37,8 @@ html {
 }
 
 body {
-  width: 90%;
+  width: 100%;
   margin-inline: auto;
-  padding-top: 80px;
-  /* Add space for fixed navbar */
 }
 
 .navbar {
@@ -48,8 +46,9 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  background-color: rgba(0, 0, 16, 0.95);
+  background-color: rgba(0, 0, 0, 0);
   backdrop-filter: blur(10px);
+  border-bottom: 1px solid #000010;
   position: fixed;
   top: 0;
   left: 0;
@@ -208,6 +207,7 @@ body {
   background-color: #16182a;
 }
 
+
 /* Enhanced Background Animation */
 .hero::before {
   content: "";
@@ -223,9 +223,7 @@ body {
   animation: gradient-flow 20s ease infinite;
   z-index: 1;
   opacity: 0.3;
-  /* Increased opacity */
   filter: blur(80px);
-  /* Reduced blur for bolder effect */
 }
 
 @keyframes gradient-flow {
